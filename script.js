@@ -183,6 +183,16 @@ navLinkItems.forEach(link => {
     });
 });
 
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+
 // ========================================
 // SMOOTH SCROLL & ACTIVE NAV LINK
 // ========================================
